@@ -20,6 +20,8 @@ export class AppController {
       (accumulator, currentValue) => accumulator + currentValue,
       0,
     );
+    console.log('feature A');
+    console.log('Feature B');
     if (sum > 10) return sum;
     throw new RpcException('This is a custom error message');
   }
