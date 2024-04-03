@@ -1,10 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import {
-  EventPattern,
-  MessagePattern,
-  RpcException,
-} from '@nestjs/microservices';
+import { MessagePattern, RpcException } from '@nestjs/microservices';
 
 @Controller()
 export class AppController {
@@ -23,11 +19,5 @@ export class AppController {
     );
     throw new RpcException('This is a custom error message');
     return sum;
-  }
-
-  @EventPattern('user_created')
-  createUser(nums: number[]): Array<number> {
-    const multipliedNumbers = nums.map((number) => number * 73);
-    return multipliedNumbers;
   }
 }
