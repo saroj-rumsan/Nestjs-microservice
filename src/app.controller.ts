@@ -28,7 +28,6 @@ export class AppController {
   @EventPattern('user_created')
   createUser(nums: number[]): Array<number> {
     const multipliedNumbers = nums.map((number) => number * 73);
-    console.log(multipliedNumbers);
     return multipliedNumbers;
   }
 }
